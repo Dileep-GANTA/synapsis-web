@@ -1058,3 +1058,71 @@ ul.page-breadcrumb li span {
      color: rgb(248, 83, 83);
     
 }
+
+/* mobile view fix for bluebar */
+
+@media (max-width: 1350px) {
+    .bluebar ul li a {
+        width: calc(90%/4);
+        padding: 8px 10px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 992px) {
+    .mobile-container {
+        display: inline-block !important;
+        background: #201e1f;
+        padding: 10px;
+        float: right !important;
+        margin: 12px 0 12px auto !important; /* Push fully right */
+        clear: both; /* Clear any prior floats */
+        position: relative;
+        right: 0;
+    }
+    .mobile-container i {
+        color: #fff;
+    }
+    .bluebar ul li a {
+        color: #000;
+        float: left;
+        width: calc(90%/2);
+        text-align: center;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        clear: left; /* Prevent overlap */
+    }
+    .intro-title {
+        vertical-align: top;
+        padding-top: 20px;
+    }
+    /* Add clearfix to parent container */
+    .bluebar::after, .header-container::after { /* Adjust .header-container to your actual parent class */
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+@media (max-width: 767px) {}
+
+@media (max-width: 600px) {
+    .bluebar {
+        position: inherit;
+        margin-top: 0px;
+        overflow: hidden; /* Contain floats */
+    }
+    .mobile-container {
+        float: right !important;
+        margin: 12px auto 12px 0 !important; /* Reaffirm right position */
+        clear: both;
+    }
+    .bluebar ul li a {
+        color: #000;
+        float: left;
+        width: calc(90%/1);
+        text-align: center;
+    }
+}
